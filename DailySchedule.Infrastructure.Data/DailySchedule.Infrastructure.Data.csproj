@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DailySchedule.Domain.Core\DailySchedule.Domain.Core.csproj" />
     <ProjectReference Include="..\DailySchedule.Domain.Interfaces\DailySchedule.Domain.Interfaces.csproj" />
-    <ProjectReference Include="..\Logic\DailySchedule.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>

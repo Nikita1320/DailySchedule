@@ -1,5 +1,4 @@
-﻿using DailySchedule.Domain.Interfaces;
-using DailySchedule.Infrastructure.Data;
+﻿using DailySchedule.Infrastructure.Data;
 
 namespace DailySchedule.Services.Business
 {
