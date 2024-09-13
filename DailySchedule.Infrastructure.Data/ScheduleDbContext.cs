@@ -1,12 +1,12 @@
 ﻿using DailySchedule.Domain.Core;
 using Microsoft.EntityFrameworkCore;
-using Task = DailySchedule.Domain.Core.Task;
+using Job = DailySchedule.Domain.Core.Job;
 
 namespace DailySchedule.Infrastructure.Data
 {
     public class ScheduleDbContext: DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Job> Jobs { get; set; }
     }
 }

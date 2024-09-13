@@ -13,31 +13,31 @@ namespace DailySchedule.Infrastructure.Data
             this.db = db;
         }
 
-        public IEnumerable<User> GetAll()
+        public async Task<IEnumerable<User>> GetAll()
         {
-            return db.Users.ToList();
+            return await Task.Run(() => db.Users.ToList());
         }
 
-        public User Get(int id)
+        public async Task<User> Get(int id)
         {
-            return db.Users.Find(id);
+            return await Task.Run(() => db.Users.Find(id));
         }
 
-        public void Create(User users)
+        public async Task Create(User users)
         {
-            db.Users.Add(users);
+            await Task.Run(() => db.Users.Add(users));
         }
 
-        public void Update(User users)
+        public async Task Update(User users)
         {
-            db.Entry(users).State = EntityState.Modified;
+            await Task.Run(() => db.Entry(users).State = EntityState.Modified);
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            User user = db.Users.Find(id);
+            User user = await Task.Run(() => db.Users.Find(id));
             if (user != null)
-                db.Users.Remove(user);
+                await Task.Run(() => db.Users.Remove(user));
         }
     }
 }

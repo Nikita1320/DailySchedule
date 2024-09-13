@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DailySchedule.Domain.Core\DailySchedule.Domain.Core.csproj" />
     <ProjectReference Include="..\DailySchedule.Infrastructure.Data\DailySchedule.Infrastructure.Data.csproj" />
   </ItemGroup>
 

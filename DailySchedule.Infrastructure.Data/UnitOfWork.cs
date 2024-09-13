@@ -3,15 +3,15 @@
     public class UnitOfWork: IDisposable
     {
         private ScheduleDbContext db = new ScheduleDbContext();
-        private TaskRepository taskRepository;
+        private JobRepository taskRepository;
         private UserRepository userRepository;
 
-        public TaskRepository Tasks
+        public JobRepository Jobs
         {
             get
             {
                 if (taskRepository == null)
-                    taskRepository = new TaskRepository(db);
+                    taskRepository = new JobRepository(db);
                 return taskRepository;
             }
         }
