@@ -6,6 +6,7 @@ namespace DailySchedule.Domain.Interfaces
     {
         Task <IEnumerable<T>> GetAll();
         Task<T> Get(int id);
+        Task<T> Get(Func<T, bool> condition);
         Task Create(T item);
         Task Update(T item);
         Task Delete(int id);

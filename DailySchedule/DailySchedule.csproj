@@ -12,8 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DailySchedule.Domain.Core\DailySchedule.Domain.Core.csproj" />
+    <ProjectReference Include="..\DailySchedule.Domain.Interfaces\DailySchedule.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\DailySchedule.Infrastructure.Data\DailySchedule.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\DailySchedule.Infrastructure.Persistance\DailySchedule.Infrastructure.Interfaces.csproj" />
     <ProjectReference Include="..\DailySchedule.Services.Business\DailySchedule.Services.Business.csproj" />
+    <ProjectReference Include="..\DailySchedule.Services.Persistance\DailySchedule.Services.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

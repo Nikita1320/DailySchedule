@@ -1,6 +1,7 @@
 ﻿using DailySchedule.Domain.Core;
 using DailySchedule.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace DailySchedule.Infrastructure.Data
 {
@@ -22,6 +23,10 @@ namespace DailySchedule.Infrastructure.Data
         {
             return await Task.Run(() => db.Users.Find(id));
         }
+        public Task<User> Get(Func<User, bool> condition)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task Create(User users)
         {
@@ -39,5 +44,13 @@ namespace DailySchedule.Infrastructure.Data
             if (user != null)
                 await Task.Run(() => db.Users.Remove(user));
         }
+
+        public async Task<User> Get(Expression<Func<User, bool>> condition)
+        {
+            var user = await db.Users.AsNoTracking().FirstOrDefaultAsync(condition) ?? null;
+
+            return user;
+        }
+
     }
 }

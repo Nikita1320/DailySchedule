@@ -39,5 +39,10 @@ namespace DailySchedule.Infrastructure.Data
             if (job != null)
                 await Task.Run(() => db.Jobs.Remove(job));
         }
+
+        public Task<Job> Get(Func<Job, bool> condition)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
